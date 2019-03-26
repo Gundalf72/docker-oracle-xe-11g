@@ -30,7 +30,8 @@ if [ "$ORACLE_DISABLE_ASYNCH_IO" = true ]; then
   service oracle-xe restart
 fi
 
-for f in /docker-entrypoint-initdb.d/*; do
+shopt -s globstar
+for f in /docker-oracle-scripts/**/*; do
   [ -f "$f" ] || continue
   case "$f" in
     *.sh)     echo "$0: running $f"; . "$f" ;;

@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 
-MAINTAINER Wei-Ming Wu <wnameless@gmail.com>
+MAINTAINER Andrew Lowcock <andrew.lowcock@gmail.com>
 
-ADD assets /assets
-RUN /assets/setup.sh
+ADD install /install
+RUN /install/setup.sh
 
 EXPOSE 22
 EXPOSE 1521
